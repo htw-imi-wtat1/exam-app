@@ -1,12 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Navigation from './navigation/navbar'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Navigation />
+        <p>WTAT1 - Exam Base App</p>
+
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
