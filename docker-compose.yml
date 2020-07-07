@@ -1,0 +1,28 @@
+version: '3'
+services:
+  mongodb:
+    image: library/mongo:4.0-xenial
+    container_name: 'modulehandbook-mongo'
+    environment:
+      - MONGO_INITDB_DATABASE=
+      - MONGO_INITDB_ROOT_USERNAME=
+      - MONGO_INITDB_ROOT_PASSWORD=
+    volumes:
+      - ./mongo/data:/data/db
+    ports:
+      - 27017-27019:27017-27019
+  modhandnode:
+    container_name: modhandnode
+    restart: always
+    build: .
+    ports:
+      - "3003:3003"
+    links:
+      - mongodb
+    environment:
+      - PORT=3002
+      - MONGODB_URI=mongodb://mongodb:27017/wtat1-exam
+    volumes:
+      - .:/usr/src/wtat1-exam
+      - ./logs/docker-npm:/root/.npm/_logs/
+      - /usr/src/wtat1-exam/node_modules
