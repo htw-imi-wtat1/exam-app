@@ -24,9 +24,8 @@ const server = app.listen(config.port, () => {
 const io = require('socket.io')(server)
 require('./socket/chat')(io)
 
-const mongodbURI = process.env.MONGODB_URI || ((process.env.NODE_ENV === 'test') ? 'mongodb://localhost:27017/modulehandbook_test_db' : 'mongodb://localhost:27017/modulehandbook_db')
-
-mongoose.connect(mongodbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+const {mongoURI} = require('./config')
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', () => {
