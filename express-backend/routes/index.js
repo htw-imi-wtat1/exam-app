@@ -50,7 +50,10 @@ router.use(
 )
 
 router.use(express.json())
-
+router.get('/api/todos',(req, res) => {
+    res.send({todo: 'just a super simple example'})
+}
+)
 router.get('/chat', chatController.chat)
 router.get('/', indexController.index)
 
