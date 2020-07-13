@@ -19,7 +19,7 @@ Basis App für Exam WTAT1 PZ1.
     - git clone https://github.com/htw-imi-wtat1/exam-app.git
     - cd exam-app
     - das gitlab repo als remote hinzufügen:
-        - git remote add gitlab https://gitlab.rz.htw-berlin.de/<s0xxxxxx>/wtat1-exam-sose2020-pz1 
+        - git remote add gitlab https://gitlab.rz.htw-berlin.de/s0xxxxxx/wtat1-exam-sose2020-pz1 
         - z.B. git remote add gitlab https://gitlab.rz.htw-berlin.de/kleinen/wtat1-exam-sose2020-pz1
     - die Abgabe üben:
         - git tag exam-pz1-anfang
@@ -43,7 +43,7 @@ Und, falls Sie den Tag schon gepusht haben, auf dem repository entweder über da
     - git push --delete gitlab exam-pz1-abgabe
     
 Am Besten warten Sie nach der Klausur noch kurz im Zoom bis ich überprüft habe,
-ob ich alle bzw. Ihr Repositories laden konnte.
+ob ich alle bzw. Ihr Repository laden konnte.
 
 ## Express App & Backend
 
