@@ -1,6 +1,8 @@
 const router = require('express').Router()
 const express = require('express')
 
+const userRoutes = require('./userRoutes')
+
 const indexController = require('../controllers/indexController')
 const chatController = require('../controllers/chatController')
 const layouts = require('express-ejs-layouts')
@@ -49,11 +51,15 @@ router.use(
     })
 )
 
+router.use((req, res, next) => {
+    res.locals.flashMessages = req.flash()
+    res.locals.loggedIn = req.authProxyIsAuthenticated()
+    res.locals.currentUser = req.authProxyUser()
+    next()
+})
+
 router.use(express.json())
-router.get('/api/todos',(req, res) => {
-    res.send({todo: 'just a super simple example'})
-}
-)
+router.use('/users', userRoutes)
 router.get('/chat', chatController.chat)
 router.get('/', indexController.index)
 

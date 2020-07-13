@@ -2,7 +2,7 @@ version: '3'
 services:
   mongodb:
     image: library/mongo:4.0-xenial
-    container_name: 'modulehandbook-mongo'
+    container_name: 'wtat1-exam-mongo'
     environment:
       - MONGO_INITDB_DATABASE=
       - MONGO_INITDB_ROOT_USERNAME=
