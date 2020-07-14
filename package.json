@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^1.2.1",
-    "jest": "^26.1.0",
+    "jest": "24.9.0",
     "nodemon": "^2.0.4",
     "supertest": "^4.0.2"
   }
